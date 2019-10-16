@@ -7,7 +7,7 @@ export const FETCH_FAILED = 'FETCH_FAILED';
 export const fetchPhotos = () => dispatch => {
     dispatch({type: START_FETCHING});
     axios
-    .get('http://jservice.io/api/random')
+    .get('https://jservice.io/api/random')
     .then(res => dispatch({type: FETCH_SUCCESS, payload: res.data}, console.log('From Action axios',res.data)))
     .catch (err => dispatch({type: FETCH_FAILED, payload: err.res}));
 };
